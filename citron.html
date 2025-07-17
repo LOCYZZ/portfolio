@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mes Liens - Citron</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="citron.png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(to bottom, #FFD700, #FFA500);
+      overflow: hidden;
+      position: relative;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .link {
+      display: block;
+      background: white;
+      color: black;
+      margin: 10px 0;
+      padding: 18px 28px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 18px;
+    }
+
+    .link:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    /* 🍋 Citron qui tombe */
+    .lemon {
+      position: fixed; /* important pour que ça parte du haut visible */
+      top: -100px;
+      width: 80px;
+      height: 80px;
+      background-image: url('citron2.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: fall linear infinite;
+      z-index: 1;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .link {
+        font-size: 16px;
+        padding: 14px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="citron.png" alt="Logo" class="logo" />
+    <h1>Mes liens</h1>
+
+    <a href="https://discord.com/invite/qnXFdXCsYT" class="link" target="_blank">Mon Discord</a>
+    <a href="https://www.tiktok.com/@king.citron" class="link" target="_blank">TikTok</a>
+    <a href="https://youtube.com/@king.citron?si=Wk3N6tFowaGKBwL-&amp;sub_confirmation=1" class="link" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/king_citron" class="link" target="_blank">Instagram</a>
+    <a href="https://locyzz.github.io/yt/freerewards" class="link" target="_blank">Cosmétiques gratuits (LOCYZZ)</a>
+  </div>
+
+  <!-- 🍋 Animation citron2.png -->
+  <script>
+    const lemonCount = 20;
+
+    for (let i = 0; i < lemonCount; i++) {
+      const lemon = document.createElement('div');
+      lemon.classList.add('lemon');
+      lemon.style.left = Math.random() * 100 + 'vw';
+      lemon.style.animationDuration = (5 + Math.random() * 5) + 's';
+      lemon.style.animationDelay = (Math.random() * 5) + 's';
+      document.body.appendChild(lemon);
+    }
+  </script>
+
+</body>
+</html>

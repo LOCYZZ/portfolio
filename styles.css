@@ -1,0 +1,106 @@
+body {
+    background-color: #212121;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative; /* Ajouté pour positionner le footer */
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title {
+    position: absolute;
+    top: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25vw;
+    max-width: 500px;
+    height: auto;
+}
+
+/* Carte de profil */
+.profile-card {
+    position: absolute;
+    top: 58%;
+    left: 8vw;
+    transform: translateY(-50%);
+    width: 20vw;
+    max-width: 400px;
+}
+
+.profile-card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Dossier de compétences */
+.folders {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+    width: 30vw;
+    max-width: 600px;
+}
+
+.folder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.folder img {
+    width: 11vw;
+    max-width: 220px;
+    height: auto;
+}
+
+/* Téléphone */
+.phone {
+    position: absolute;
+    top: 58%;
+    right: 15vw;
+    transform: translateY(-50%);
+    width: 14vw;
+    max-width: 275px;
+    height: auto;
+    aspect-ratio: 275 / 650;
+}
+
+.phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 100; /* Assure que le footer est au-dessus des autres éléments */
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+}
